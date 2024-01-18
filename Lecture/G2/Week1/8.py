@@ -1,6 +1,6 @@
 a = 5
 b = 3.5
-c = "String"
+c = "str"
 
 print(type(a))
 print(type(b))

@@ -7,3 +7,4 @@ print(ourlist)
 a, b, c = ourlist
 
 print(a, b, c)
+

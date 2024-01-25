@@ -1,4 +1,3 @@
-a = "100"
-b = "Apples"
+a, b, c = "Cat", "Dog", "Mouse"
 
-print(a, b)
+print(a, b, c)

@@ -1,3 +1,6 @@
-a, b, c = "Cat", "Dog", "Mouse"
+a = 5
 
-print(a, b, c)
+if a % 2 == 0:
+    print("Even")
+else:
+    print("Odd")

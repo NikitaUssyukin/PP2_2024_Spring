@@ -1,4 +1,4 @@
-a = 3.3
-b = 9.2
+a = "Apple"
+b = "is a fruit"
 
-print(b - a)
+print(a + b)

@@ -1,4 +1,4 @@
-a = "100"
-b = "Apples"
+a = "Apple"
+b = "is a fruit"
 
-print(a + b)
+print(a, b)

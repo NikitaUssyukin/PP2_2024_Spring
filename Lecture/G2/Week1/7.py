@@ -1,6 +1,12 @@
-a = 3
-b = 7
-print(a, b)
+a = 5
+b = 3.3
+c = "Hello"
 
-a, b = b, a
-print(a, b)
+print(type(a))
+print(type(b))
+print(type(c))
+
+a = "Five"
+
+print(type(a))
+print(a)

@@ -8,7 +8,7 @@ def myfunc():
 def myfunc2():
     print("KBTU is", a)
 
-myfunc
-myfunc2
+myfunc()
+myfunc2()
 
 

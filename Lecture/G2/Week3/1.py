@@ -7,6 +7,8 @@ class Person:
 
 Linus = Person()
 
+print(Linus.name)
+
 Linus.introduce()
 
 

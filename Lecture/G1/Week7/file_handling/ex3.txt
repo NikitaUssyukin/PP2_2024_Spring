@@ -1,0 +1,9 @@
+This data was appended from 4_2.py using write() function!
+This data was appended from 4_2.py using write() function!
+This data was appended from 4_2.py using write() function!
+This data was appended from 4_2.py using write() function!
+This data was appended from 4_2.py using write() function!
+This data was appended from 4_2.py using write() function!
+This data was appended from 4_2.py using write() function!
+This data was appended from 4_2.py using write() function!
+This data was appended from 4_2.py using write() function!

@@ -1,0 +1,1 @@
+This is 7.txt, it was created and written from 11.py

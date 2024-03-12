@@ -4,6 +4,8 @@ pygame.init()
 
 screen = pygame.display.set_mode((800, 600))
 
+image = pygame.image.load('ball.png')
+
 done = False
 
 x = 30
@@ -25,8 +27,10 @@ while not done:
         if event.key == pygame.K_LEFT:
             x -= 3
 
-    screen.fill((0, 0, 0))
-    pygame.draw.rect(screen, (255, 0, 0), pygame.Rect(x, y, 200, 100))
+    screen.fill((255, 255, 255))
+    
+    screen.blit(image, (x, y))
+
     pygame.display.flip()
     clock.tick(60)
         

@@ -15,6 +15,7 @@ colorBLUE = (0, 0, 255)
 colorYELLOW = (255, 255, 0)
 
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
+base_layer = pygame.Surface((WIDTH, HEIGHT))
 
 done = False
 
@@ -26,9 +27,10 @@ prevY = 0
 currX = 0
 currY = 0
 
-while not done:
+def calculate_rect(x1, y1, x2, y2):
+    return pygame.Rect(min(x1, x2), min(y1, y2), abs(x1 - x2), abs(y1 - y2))
 
-    screen.fill(colorBLACK)
+while not done:
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -49,8 +51,11 @@ while not done:
         if event.type == pygame.MOUSEBUTTONUP and event.button == 1:
             print("LMB released")
             LMBpressed = False
+            pygame.draw.rect(screen, colorYELLOW, calculate_rect(prevX, prevY, currX, currY), 2)
+            base_layer.blit(screen, (0, 0))
 
     if LMBpressed:
-        pygame.draw.rect(screen, colorYELLOW, (prevX, prevY, currX - prevX, currY - prevY), 2)
+        screen.blit(base_layer, (0, 0))
+        pygame.draw.rect(screen, colorYELLOW, calculate_rect(prevX, prevY, currX, currY), 2)
 
     pygame.display.flip()

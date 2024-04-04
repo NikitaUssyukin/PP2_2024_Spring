@@ -1,5 +1,7 @@
 import pygame
 import sys
+from random import randint
+from time import sleep
 
 pygame.init()
 
@@ -34,16 +36,26 @@ class Player(pygame.sprite.Sprite):
         if pressed[pygame.K_LEFT] and self.rect[0] > 0:
             self.rect.move_ip(-5, 0)
 
-
 class Enemy(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
         self.image = pygame.image.load(".\\resources\\Enemy.png")
         self.rect = self.image.get_rect()
-        self.rect.center = (WIDTH // 2, 40)
+        self.rect.center = (randint(0 + self.rect.w // 2 , WIDTH - self.rect.w // 2), 20)
+        self.speed = 5
 
     def move(self):
-        self.rect.move_ip(0, 5)
+        self.rect.move_ip(0, self.speed)
+        # Three ways to do the same thing:
+        # if self.rect[1] + self.rect[3] > HEIGHT:
+        #     self.rect.center = (WIDTH // 2, 40)
+        # if self.rect[1] + self.rect[3] > HEIGHT:
+        #     self.rect.center = (WIDTH // 2, 40)
+        if self.rect.bottom > HEIGHT:
+            self.rect.center = (randint(0 + self.rect.w // 2 , WIDTH - self.rect.w // 2), 20)
+
+INC_SPEED = pygame.USEREVENT + 1
+pygame.time.set_timer(INC_SPEED, 1000)
 
 P1 = Player()
 E1 = Enemy()
@@ -63,6 +75,8 @@ while not done:
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
+        if event.type == INC_SPEED:
+            E1.speed += 1
 
     screen.blit(BACKGROUND, (0, 0))
 
@@ -72,7 +86,15 @@ while not done:
 
     if pygame.sprite.spritecollideany(P1, enemies):
         print("Collision!")
+        screen.fill(colorRED)
+        pygame.display.flip()
+        sleep(2)
+        pygame.quit()
+        sys.exit()
 
     pygame.display.flip()
 
     clock.tick(FPS)
+
+# Removing the event from the timer
+pygame.time.set_timer(INC_SPEED, 0)

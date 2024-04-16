@@ -2,3 +2,4 @@ Others/
 .DS_Store
 *.DS_Store
 Others*
+*__pycache__*

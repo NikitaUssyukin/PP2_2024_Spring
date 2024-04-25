@@ -1,5 +1,3 @@
-# Additional file, was not shown on the lecture
-
 # CSV - Comma Separated Values
 # file format, where each line represents one row (one entity or tuple)
 # and each comma separates one column (or attribute for the particular entity)
